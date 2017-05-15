@@ -1,0 +1,14 @@
+---
+
+ - name: set hostname
+   template: src=hostname.jff2 dest=/etc/hostname
+
+ - name: set hosts
+   template: src=hosts.jff2 dest=/etc/hosts
+
+ - name: install base packages
+   apt: name={{ item }} state=latest update_cache=yes cache_valid_time=3600
+   with_items:
+       - vim
+       - less
+       - bash-completion

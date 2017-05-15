@@ -1,0 +1,10 @@
+---
+
+ - name: install requirements
+   apt: name={{ item }} state=latest update_cache=yes cache_valid_time=3600
+   with_items:
+       - libvirt-bin
+       - qemu-kvm
+
+ - name: copy sysctl
+   copy: src=99-quagga.conf dest=/etc/sysctl.d/99-quagga.conf

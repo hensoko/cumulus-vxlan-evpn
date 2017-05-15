@@ -6,19 +6,27 @@ source /etc/network/interfaces.d/*.intf
 # The loopback network interface
 auto lo
 iface lo inet loopback
-    address 10.2.1.2/32
+    address {{ router_id }}/32
 
 # The primary network interface
-auto eth0
-iface eth0 inet dhcp
+#auto eth0
+#iface eth0 inet dhcp
 
 auto swp1
 iface swp1
-    address 10.2.1.2/32
+    address {{ router_id }}/32
 
 auto swp2
 iface swp2
-    address 10.2.1.2/32
+    address {{ router_id }}/32
+
+auto swp3
+iface swp3
+    address {{ router_id }}/32
+
+auto swp4
+iface swp4
+    address {{ router_id }}/32
 
 auto fabric
 iface fabric
