@@ -1,0 +1,13 @@
+---
+
+- hosts: spines
+    roles:
+        - ../../roles/spine
+
+- hosts: leafs
+    roles:
+        - ../../roles/leaf
+
+- hosts: hypervisors
+    roles:
+        - ../../roles/hypervisor
